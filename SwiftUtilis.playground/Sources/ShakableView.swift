@@ -12,6 +12,8 @@ enum ShakeAxis {
     }
 }
 
+// Conform your custom views to this protocol to add shake functionality [Recommended]
+// To have it available on all UIViews just add conformance to `UIView` [Not recommended]
 protocol ShakableView {
     var movementEffect: CAMediaTimingFunctionName { get }
     

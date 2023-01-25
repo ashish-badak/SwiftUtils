@@ -1,5 +1,7 @@
 import UIKit
 
+// Conform your custom views to this protocol to add fade-in and fade-out animation functionality [Recommended]
+// To have it available on all UIViews just add conformance to `UIView` [Not recommended]
 protocol FadingView {
     func fadeIn(
         duration: TimeInterval,

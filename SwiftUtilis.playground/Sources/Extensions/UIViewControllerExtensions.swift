@@ -15,4 +15,24 @@ extension UIViewController {
         view.removeFromSuperview()
         removeFromParent()
     }
+    
+    var isModallyPresented: Bool {
+        if let index = navigationController?.viewControllers.firstIndex(of: self), index > 0 {
+            return false
+        }
+        
+        if presentingViewController != nil {
+            return true
+        }
+        
+        if navigationController?.presentingViewController?.presentedViewController == navigationController {
+            return true
+        }
+        
+        if tabBarController?.presentingViewController is UITabBarController {
+            return true
+        }
+        
+        return false
+    }
 }
